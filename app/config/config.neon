@@ -1,0 +1,24 @@
+parameters:
+
+application:
+	scanDirs: false
+	mapping:
+		*: App\Presenter\*Presenter
+
+services:
+	userFacade: App\Model\User\UserFacade
+	createUserComponentFactory: App\Component\CreateUserComponent\CreateUserComponentFactory
+	router: Nette\Application\Routers\SimpleRouter('Homepage:default')
+
+kdyby.console:
+	application: false
+
+kdyby.doctrine:
+	metadata:
+		App: %appDir%/../src/
+
+extensions:
+	kdyby.console: Kdyby\Console\DI\ConsoleExtension
+	kdyby.events: Kdyby\Events\DI\EventsExtension
+	kdyby.annotations: Kdyby\Annotations\DI\AnnotationsExtension
+	kdyby.doctrine: Kdyby\Doctrine\DI\OrmExtension

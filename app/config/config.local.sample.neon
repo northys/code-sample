@@ -1,0 +1,3 @@
+kdyby.doctrine:
+	driver: pdo_sqlite
+	path: /tmp/database.sqlite
